@@ -79,7 +79,7 @@ export interface Event {
   description?: string;
   shortDescription?: string;
   status: EventStatus;
-  visibility: EventVisibility;
+  visibility?: EventVisibility;
   categoryId?: string;
   
   // Scheduling
@@ -87,10 +87,10 @@ export interface Event {
   endDate: string;
   registrationStart?: string;
   registrationEnd?: string;
-  timezone: string;
+  timezone?: string;
   
   // Location
-  locationType: LocationType;
+  locationType?: LocationType;
   venue?: string;
   address?: string;
   room?: string;
@@ -99,34 +99,34 @@ export interface Event {
   
   // Capacity
   maxParticipants?: number;
-  minParticipants: number;
-  currentRegistrations: number;
-  waitlistEnabled: boolean;
+  minParticipants?: number;
+  currentRegistrations?: number;
+  waitlistEnabled?: boolean;
   maxWaitlist?: number;
   
   // Requirements
-  requiresApproval: boolean;
-  requiresPayment: boolean;
+  requiresApproval?: boolean;
+  requiresPayment?: boolean;
   paymentAmount?: number;
-  prerequisites: string[];
+  prerequisites?: string[];
   
   // Media
   bannerImageUrl?: string;
-  galleryImages: string[];
-  documents: string[];
+  galleryImages?: string[];
+  documents?: string[];
   
   // Settings
-  allowCancellation: boolean;
+  allowCancellation?: boolean;
   cancellationDeadline?: string;
-  sendReminders: boolean;
-  collectFeedback: boolean;
-  generateCertificates: boolean;
+  sendReminders?: boolean;
+  collectFeedback?: boolean;
+  generateCertificates?: boolean;
   certificateTemplateId?: string;
   
   // Analytics
-  viewsCount: number;
-  featured: boolean;
-  tags: string[];
+  viewsCount?: number;
+  featured?: boolean;
+  tags?: string[];
   
   // Audit
   createdBy?: string;
@@ -174,17 +174,17 @@ export interface Registration {
   
   // Registration Details
   status: RegistrationStatus;
-  registrationType: RegistrationType;
+  registrationType?: RegistrationType;
   source?: string;
   
   // Approval
-  requiresApproval: boolean;
+  requiresApproval?: boolean;
   approvedBy?: string;
   approvedAt?: string;
   rejectionReason?: string;
   
   // Payment
-  paymentStatus: PaymentStatus;
+  paymentStatus?: PaymentStatus;
   paymentAmount?: number;
   paymentMethod?: string;
   paymentReference?: string;
@@ -207,8 +207,8 @@ export interface Registration {
   };
   
   // Notifications
-  confirmationSent: boolean;
-  reminderSent: boolean;
+  confirmationSent?: boolean;
+  reminderSent?: boolean;
   
   registeredAt: string;
   updatedAt: string;
@@ -301,9 +301,9 @@ export interface Certificate {
   imageUrl?: string;
   
   // Verification
-  verificationCode: string;
+  verificationCode?: string;
   verificationUrl?: string;
-  verifiedCount: number;
+  verifiedCount?: number;
   
   metadata?: Record<string, any>;
   createdAt: string;

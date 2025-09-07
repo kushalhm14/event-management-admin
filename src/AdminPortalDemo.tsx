@@ -20,7 +20,9 @@ import ReportsScreen from './admin/screens/ReportsScreen';
 type Screen = 'home' | 'events' | 'students' | 'reports';
 
 const AdminPortalDemo: React.FC = () => {
-  const { isAdmin, isLoading, login } = useAdminAuth();
+  const { user, loading, login } = useAdminAuth();
+  const isAdmin = !!user;
+  const isLoading = loading;
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
   const [showLogin, setShowLogin] = useState(false);
   const [loginToken, setLoginToken] = useState('');
